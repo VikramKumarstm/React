@@ -1,0 +1,47 @@
+*{
+  padding: 0;
+  box-sizing: border-box;
+  margin: auto;
+}
+
+.menu {
+  background-color: black;
+  color: #fff;
+  height: 100%;
+  width: 40%;
+  padding: 15px 0;
+  position: fixed;
+  left: -100%;
+  transition: 0.5s;
+  text-align: center;
+}
+
+.activeMenu {
+  left: 0%;
+}
+
+.logo {
+  height: 60px;
+  width: 60px;
+  background-color: #fff;
+  border-radius: 40px;
+  flex-basis: 25%;
+  margin-bottom: 50px;
+  margin-top: 20px;
+}
+
+.menu ul {
+
+}
+
+.menu ul li {
+  list-style: none;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.micon {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
