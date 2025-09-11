@@ -1,0 +1,30 @@
+.faqOuter {
+    
+}
+
+.faqItems {
+    border: 2px solid orangered;
+    margin: 10px;
+    text-align: left;
+}
+
+.faqItems h2 {
+    background-color: black;
+    color: #fff;
+    margin: 0;
+    padding: 10px;
+}
+
+.faqItems p {
+    height: 0;
+    transform: scaleY(0);
+    margin: 0;
+    transition: 0.5s;
+}
+
+.activeFaq {
+    height: auto !important;
+    transform: scaleY(1) !important;
+    padding: 10px !important;
+
+}
