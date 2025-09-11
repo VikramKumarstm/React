@@ -1,0 +1,32 @@
+.app {
+  width: 100%;
+  text-align: center;
+}
+
+.faqItems {
+  border: 2px solid orangered;
+  text-align: left;
+  margin: 10px;
+}
+
+.faqItems h2 {
+  background-color: black;
+  color: #fff;
+  margin: 0;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.nonActive {
+  height: 0;
+  margin: 0;
+  transform: scaleY(0);
+  transition: 0.5s;
+}
+
+.activeAns {
+  height: auto !important;
+  transform: scaleY(1) !important;
+  padding: 10px;
+}
+
