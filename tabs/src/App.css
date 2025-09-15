@@ -1,0 +1,36 @@
+.app {
+  text-align: center;
+}
+
+.app h1 {
+  border-bottom: 2px solid black;
+}
+
+ul {
+  display: flex;
+  column-gap: 10px;
+}
+
+ul li {
+  list-style: none;
+}
+
+ul li button {
+  background-color: #e4e4e4;
+  border: none;
+  color: #343a40;
+  padding: 0.5rem 20px;
+  margin-right: 18px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+p {
+  text-align: left;
+  padding: 0 35px;
+}
+
+.activeButton {
+  background-color: orangered !important;
+  color: #fff;
+}
