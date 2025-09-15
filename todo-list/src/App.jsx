@@ -25,7 +25,14 @@ function App() {
   let list = todolist.map((value, i) => {
     return (
 
-      <ToDoListItems value={value} key={i}/>
+      <ToDoListItems 
+        value={value} 
+        key={i}
+        indexNumber={i}
+        todolist={todolist}
+        setTodolist={setTodolist}
+
+      />
 
     )
   })
@@ -48,8 +55,20 @@ function App() {
 
 export default App
 
-function ToDoListItems({value}) {
+function ToDoListItems({value, indexNumber, todolist, setTodolist}) {
+
+  let [status, setStatus] = useState(false)
+
+  let deleteTodo = () => {
+    let finalData = todolist.filter((v, i) => i != indexNumber)
+    setTodolist(finalData)
+  }
+
+  let checkStatus = () => {
+    setStatus(!status)
+  }
+
   return (
-    <li>{value}<span>&times;</span></li>
+    <li className={(status) ? 'completeTodo' : ''} onClick={checkStatus}>{indexNumber + 1}. {value}<span onClick={deleteTodo}>&times;</span></li>
   )
 }
