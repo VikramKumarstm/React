@@ -14,3 +14,24 @@ h1 {
 p {
     text-align: center;
 }
+
+.container {
+    width: 100%;
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.blog-items {
+    flex-basis: 23%;
+    box-shadow: 0px 0px 10px 2px #ccc;
+    padding: 10px 10px;
+    text-align: center;
+}
+
+.error404 {
+    width: 100%;
+    text-align: center;
+    padding-top: 50px;
+}

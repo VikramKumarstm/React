@@ -3,6 +3,9 @@ import Header from "../common/Header";
 import { Route, Routes } from "react-router-dom";
 import About from "./About";
 import Course from "./Course";
+import Blog from "./Blog";
+import BlogDetails from "./BlogDetails";
+import Error404 from "./Error404";
 
 function Home() {
   return (
@@ -11,39 +14,10 @@ function Home() {
         <Route path="/" element={<Header />} />
         <Route path="/about-us" element={<About />} />
         <Route path="/course" element={<Course />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/:id" element={<BlogDetails />} />
+        <Route path="*" element={<Error404 />} /> 
       </Routes>
-
-      <h1>Home Page</h1>
-      <p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias laborum
-        ipsum, quidem temporibus nesciunt eligendi, accusantium soluta libero
-        eum delectus ut veniam. Voluptatibus laborum, odit id consequuntur culpa
-        enim quaerat!
-      </p>
-      <p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias laborum
-        ipsum, quidem temporibus nesciunt eligendi, accusantium soluta libero
-        eum delectus ut veniam. Voluptatibus laborum, odit id consequuntur culpa
-        enim quaerat!
-      </p>
-      <p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias laborum
-        ipsum, quidem temporibus nesciunt eligendi, accusantium soluta libero
-        eum delectus ut veniam. Voluptatibus laborum, odit id consequuntur culpa
-        enim quaerat!
-      </p>
-      <p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias laborum
-        ipsum, quidem temporibus nesciunt eligendi, accusantium soluta libero
-        eum delectus ut veniam. Voluptatibus laborum, odit id consequuntur culpa
-        enim quaerat!
-      </p>
-      <p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias laborum
-        ipsum, quidem temporibus nesciunt eligendi, accusantium soluta libero
-        eum delectus ut veniam. Voluptatibus laborum, odit id consequuntur culpa
-        enim quaerat!
-      </p>
     </div>
   );
 }
