@@ -52,6 +52,12 @@ function App() {
     }
   };
 
+  const deleteRow = (indexNumber) => {
+    const filterUserData = userData.filter((v, i) => i !== indexNumber)
+
+    setUserData(filterUserData)
+  }
+
   return (
     <div className="App">
       <form onSubmit={handleSubmit}>
@@ -118,7 +124,7 @@ function App() {
                   <td>{obj.unumber}</td>
                   <td>{obj.umessage}</td>
                   <td className="action">
-                    <button>Delete</button>
+                    <button onClick={() => deleteRow(i)}>Delete</button>
                     <button>Edit</button>
                   </td>
                 </tr>
