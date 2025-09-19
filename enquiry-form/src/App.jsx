@@ -23,26 +23,33 @@ function App() {
   const handleSubmit = (event) => {
     let currentUserFormData = {
       uname: formData.uname,
-      umail: formData.uemail,
+      uemail: formData.uemail,
       unumber: formData.unumber,
       umessage: formData.umessage,
     };
 
-    const oldUserData = [...userData, currentUserFormData];
-    setUserData(oldUserData);
-    console.log(oldUserData);
+    const checkFilterUser = userData.filter(
+      (value) =>
+        value.uemail === formData.uemail || value.unumber === formData.unumber
+    );
 
-    setFormData (
-      {
-        uname: '',
-        uemail: '',
-        unumber: '',
-        umessage: '',
-        index:''
-      }
-    )
+    if (checkFilterUser.length === 1) {
+      alert("Email or Phone already Exists!");
+    } else {
+      const oldUserData = [...userData, currentUserFormData];
+      setUserData(oldUserData);
+      console.log(oldUserData);
 
-    event.preventDefault();
+      setFormData({
+        uname: "",
+        uemail: "",
+        unumber: "",
+        umessage: "",
+        index: "",
+      });
+
+      event.preventDefault();
+    }
   };
 
   return (
@@ -103,11 +110,11 @@ function App() {
         <tbody>
           {userData.length >= 1 ? (
             userData.map((obj, i) => {
-              return(
+              return (
                 <tr key={i}>
-                  <td>{i+1}</td>
+                  <td>{i + 1}</td>
                   <td>{obj.uname}</td>
-                  <td>{obj.umail}</td>
+                  <td>{obj.uemail}</td>
                   <td>{obj.unumber}</td>
                   <td>{obj.umessage}</td>
                   <td className="action">
