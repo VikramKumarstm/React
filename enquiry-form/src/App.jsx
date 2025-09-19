@@ -1,5 +1,7 @@
 import { useState } from "react";
 import "./App.css";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   let [formData, setFormData] = useState({
@@ -21,6 +23,9 @@ function App() {
   };
 
   const handleSubmit = (event) => {
+
+    event.preventDefault();
+
     let currentUserFormData = {
       uname: formData.uname,
       uemail: formData.uemail,
@@ -33,11 +38,12 @@ function App() {
         value.uemail === formData.uemail || value.unumber === formData.unumber
     );
 
-    if (checkFilterUser.length === 1) {
-      alert("Email or Phone already Exists!");
+    if (checkFilterUser.length >= 1) {
+      toast.error("Email or Phone already exists")
     } else {
       const oldUserData = [...userData, currentUserFormData];
       setUserData(oldUserData);
+      toast.success("User Added Successfully")
       console.log(oldUserData);
 
       setFormData({
@@ -48,18 +54,19 @@ function App() {
         index: "",
       });
 
-      event.preventDefault();
+      
     }
   };
 
   const deleteRow = (indexNumber) => {
     const filterUserData = userData.filter((v, i) => i !== indexNumber)
-
+    toast.success("User Deleted Successfully")
     setUserData(filterUserData)
   }
 
   return (
     <div className="App">
+      <ToastContainer />
       <form onSubmit={handleSubmit}>
         <div className="input-box">
           <label>User Name</label>
