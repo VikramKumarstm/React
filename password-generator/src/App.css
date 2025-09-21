@@ -1,0 +1,65 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.app {
+    width: 100%;
+    height: 100vh;
+    background-color: #777;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.container {
+    height: 50%;
+    width: 30%;
+    background-color: pink;
+    padding: 30px 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.passBox {
+    padding-bottom: 20px;
+}
+
+.passBox input {
+    width: 80%;
+    height: 30px;
+    padding: 2px 5px;
+}
+
+.passBox button {
+    height: 37px;
+    width: 15%;
+    cursor: pointer;
+}
+
+.addFeature {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+}
+
+label {
+    flex-basis: 80%;
+}
+
+.addFeature input {
+    flex-basis: 20%;
+    height: 20px;
+}
+
+.genButton button {
+    width: 100%;
+    height: 35px;
+    background-color: orangered;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+}
