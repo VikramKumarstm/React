@@ -8,7 +8,7 @@ function App() {
   let [isLoading, setIsLoading] = useState(false)
 
   let getData = (event) => {
-
+    setIsLoading(true)
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=751d66e130befad396405dc13796a57c&units=metric`)
     .then((res) => res.json())
     .then((finalRes) => {
@@ -19,6 +19,8 @@ function App() {
       }else {
         setWDetails(finalRes)
       }
+
+      setIsLoading(false)
       
     })
 
@@ -46,7 +48,7 @@ function App() {
           <img src="https://upload.wikimedia.org/wikipedia/commons/c/c7/Loading_2.gif"
            alt="" 
            width={100}
-           className={`absolute left-[35%]`}
+           className={`absolute left-[35%] ${isLoading ? '' : 'hidden'}`}
            />
 
           {
