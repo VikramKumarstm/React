@@ -5,7 +5,7 @@ function App() {
 
   let [city, setCity] = useState('')
   let [wDetails, setWDetails] = useState()
-  let [loading, setLoading] = useState(false)
+  let [isLoading, setIsLoading] = useState(false)
 
   let getData = (event) => {
 
@@ -46,7 +46,7 @@ function App() {
           <img src="https://upload.wikimedia.org/wikipedia/commons/c/c7/Loading_2.gif"
            alt="" 
            width={100}
-           className='absolute left-[35%]'
+           className={`absolute left-[35%]`}
            />
 
           {
